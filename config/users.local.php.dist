@@ -2,7 +2,7 @@
 return array(
     // //Place it into main forlder////
     'settings' => array(
-        'BASE_URL' => 'http://zf2_skeleton.com/',
+        'BASE_URL' => 'YOUR_APPLICATION_URL',//http://example.com
         "EMAIL" => array(
             "SMTP_SENDER_TYPE" => "user",
             "SMTP_NAME" => "localhost",
@@ -13,11 +13,11 @@ return array(
             "SMTP_PASSWORD" => "",
             "SMTP_SSL" => "",
             "BODY" => "Hello there!",
-            "FROM" => "noreply@complysight.com",
-            "TO" => "kaushal@osscube.com",
-            "MAIL_FROM_NICK_NAME" => "ComplySight",
-            "SUBJECT" => "Hello today",
-            "FROM_NICK_NAME" => "ComplySight",
+            "FROM" => "FROM_URL",
+            "TO" => "TO_URL",
+            "MAIL_FROM_NICK_NAME" => "NICK_NAME",
+            "SUBJECT" => "SUBJECT_OF_THE_MAIL",
+            "FROM_NICK_NAME" => "NICK_NAME",
             'UPDATE_EMAIL_TEMPLATE' => true
         ),
         'FORGOT_PASSWORD_SUBJECT' => 'Reset Password Mail'
