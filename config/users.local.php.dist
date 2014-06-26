@@ -1,6 +1,6 @@
 <?php
 return array(
-    // //Place it into main forlder////
+    // //Place it into main config folder ////
     'settings' => array(
         'BASE_URL' => 'YOUR_APPLICATION_URL',//http://example.com
         "EMAIL" => array(
@@ -22,7 +22,7 @@ return array(
         ),
         'FORGOT_PASSWORD_SUBJECT' => 'Reset Password Mail'
     ),
-    'afterLoginURL' => 'application',
+    'afterLoginURL' => 'application', //Change it where your application redirects after login
     'controllers' => array(
         'invokables' => array(
             'Users\Controller\User' => 'Users\Controller\UserController'
