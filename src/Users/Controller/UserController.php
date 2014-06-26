@@ -40,7 +40,7 @@ class UserController extends AbstractActionController
         $viewModel = new ViewModel();
         $loginForm = new LoginForm('loginForm');
         $request = $this->getRequest();
-        
+        $message = array();
         // //Redirect to the Home Page if user already login////
         if ($session->offsetExists('userId')) {
             return $this->redirect()->toRoute($config['afterLoginURL']);
@@ -139,6 +139,8 @@ class UserController extends AbstractActionController
     public function changePasswordAction()
     {
         $session = new Container('User');
+        $message = array();
+         
         if (! $session->offsetExists('userId')) {
             $message['error'] = LoginMessages::NOT_LOGIN_ACCESS;
             $this->flashMessenger()->addMessage($message);
@@ -147,7 +149,7 @@ class UserController extends AbstractActionController
         $viewModel = new ViewModel();
         $request = $this->getRequest();
         $changePasswordForm = new ChangePasswordForm('changePasswordForm');
-        $message = array();
+       
         try {
             if ($request->isPost()) {
                 
@@ -210,6 +212,9 @@ class UserController extends AbstractActionController
         $userPassword = $this->getServiceLocator()->get('Users\Service\UserEncryption');
         $UserMailServices = $this->getServiceLocator()->get('Users\Service\UserMailServices');
         $forgotPasswordForm = new ForgotPasswordForm('forgotPasswordForm');
+        $message = array();
+        $error_message = array();
+        $mailData = array();
         
         // //Redirect to the home page if user login///
         if ($session->offsetExists('userId')) {
@@ -285,6 +290,9 @@ class UserController extends AbstractActionController
     public function resetPasswordAction()
     {
         $userPassword = $this->getServiceLocator()->get('Users\Service\UserEncryption');
+        $message = array();
+        $userPasswordData = array();
+        
         // ////////Get the Token From URL and Decrypt it///////////
         $session = new Container('User');
         $config = $this->getServiceLocator()->get('config');
