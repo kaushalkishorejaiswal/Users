@@ -1,0 +1,26 @@
+<?php 
+return array(
+    // //Place it into main forlder////
+    'settings' => array(
+        'BASE_URL' => 'http://zf2_skeleton.com/',
+        "EMAIL" => array("SMTP_SENDER_TYPE" => "user",
+            "SMTP_NAME" => "localhost", "SMTP_HOST" => "localhost",
+            "SMTP_PORT" => "25", "SMTP_CONNECTION_CLASS" => "plain",
+            "SMTP_USERNAME" => "", "SMTP_PASSWORD" => "",
+            "SMTP_SSL" => "", "BODY" => "Hello there!",
+            "FROM" => "noreply@complysight.com", "TO" => "kaushal@osscube.com",
+            "MAIL_FROM_NICK_NAME" => "ComplySight", "SUBJECT" => "Hello today",
+            "FROM_NICK_NAME" => "ComplySight",
+            'UPDATE_EMAIL_TEMPLATE' => true,),
+        'FORGOT_PASSWORD_SUBJECT' => 'Reset Password Mail',
+    ),
+    'afterLoginURL' => 'application',
+    'controllers' => array(
+        'invokables' => array(
+            'Users\Controller\User' => 'Users\Controller\UserController'
+        )
+    ),
+    'whitelist' => array(
+        'users','users/default'
+    ),
+);

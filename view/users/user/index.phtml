@@ -1,0 +1,69 @@
+<?php
+/**
+ * Login Form View
+ * @author Kaushal Kishore(kaushal.rahuljaiswal@gmail.com)
+ * 
+ */
+$form = $this->loginForm;
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->formElement($form->get('loginCsrf'));
+$errorMessage = $this->flashMessenger()->getMessages();
+?>
+<h2>Sign In</h2>
+<div class="login-bottom">
+
+	<div class="general-form-container clearfix">
+	<div>
+	<?php if(isset($errorMessage) && count($errorMessage)) :
+        $errorMessage = $errorMessage[0];
+        ?>
+        <div class="server-error padding-bottom_30">
+            <ul>
+                <?php if(isset($errorMessage)) {?>
+                <?php foreach ($errorMessage as $type => $msg) : ?>
+                <li><span class="<?php echo $type; ?>"><?php echo $msg; ?></span></li>
+                <?php endforeach; ?>
+                <?php }?>
+            </ul>
+        </div>
+        <?php endif; ?>
+			<div class="form-row">
+				<label class="form-label-half">
+				    <?php echo $this->formlabel($form->get('userName'));?>
+				</label>
+				<div class="form-fields full-width-half">
+				    <?php echo $this->formelement($form->get('userName'));?>
+				</div>
+				<div>
+				 <?php echo $this->formElementerrors($form->get('userName')); ?>
+				</div>
+			</div>
+			<div class="form-row">
+				<label class="form-label-half"><?php echo $this->formlabel($form->get('password'));?></label>
+				<div class="form-fields full-width-half">
+					<?php echo $this->formelement($form->get('password'));?>
+				</div>
+				<div>
+				 <?php echo $this->formElementerrors($form->get('password')); ?>
+				</div>
+			</div>
+			<div class="form-row clearfix">
+				<div class="sign-btn" style="padding-right:3px;">
+					<?php echo $this->formElement ( $form->get ( 'submit' ) )?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="login-footer clearfix">
+		<div class="form-row">
+			<a class="forgot-link" href="<?php echo $this->url('users', array('action' => 'forgot-password'));?>">Forgot Password?</a>
+			<label><?php echo $this->formElement ( $form->get ( 'rememberMe' ) )?> Remember me on this computer.</label>
+		</div>
+		<div class="form-row clearfix float-l">
+			<label><?php echo $this->formElement ( $form->get ( 'changePassword' ) )?> Change password after sign in.</label>
+		</div>
+	</div>
+
+</div>
