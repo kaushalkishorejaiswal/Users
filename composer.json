@@ -1,0 +1,28 @@
+{
+    "name": "kaushalkishorejaiswal/users",
+    "description": "Zend Users is a user authentication module for Zend Framework 2, which provides all the users login and authentication process. Such as login, remember me, forgot password etc.",
+    "type": "module",
+    "keywords": [
+        "zf2",
+        "zendframework2",
+        "Zend Users Module",
+        "ZF2 Auth",
+        "Users Module"
+    ],
+    "homepage": "https://github.com/kaushalkishorejaiswal/Users",
+    "authors": [
+        {
+            "name": "Kaushal Kishore",
+            "email": "kaushal.rahuljaiswal@gmail.com",
+            "homepage": "http://www.kaushalkishore.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
