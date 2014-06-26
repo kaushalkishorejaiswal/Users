@@ -27,8 +27,8 @@ Zend Users is a user authentication module for Zend Framework 2, which provides 
 </ul>
 
 <h2>Enable the module in application.config.php</h2>
-```
-<?php
+<pre>
+&lt;?php
 return array(
     'modules' => array(
         // ...
@@ -36,7 +36,7 @@ return array(
     ),
     // ...
 );
-```
+</pre>
 <h2>Routes of the Actions:</h2>
 <ul>
 <li>Login : /users</li>
@@ -49,7 +49,7 @@ return array(
 
 
 <h2>Database Table Installation:</h2>
-```mysql
+<pre>
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(101) NOT NULL,
@@ -64,7 +64,8 @@ CREATE TABLE `users` (
 ) 
 
 INSERT INTO `users` (`id`, `email`, `password`, `login_attempts`, `login_attempt_time`, `first_name`, `last_name`, `status`, `last_signed_in`) VALUES (1, 'kaushal.rahuljaiswal@gmail.com', 'd4cb903787695a544172af6f0af88fef583a81c8', 0, 0, '', '', 'Active', NULL);
-```
+</pre>
+
 <h2>Default Credentials</h2>
 <ul>
 <li>Email : kaushal.rahuljaiswal@gmail.com</li>
