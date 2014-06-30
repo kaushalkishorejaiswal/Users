@@ -11,14 +11,6 @@ before_script:
   - composer self-update
   - composer install --dev --prefer-source;
   - wget https://scrutinizer-ci.com/ocular.phar
-  - mysql -e "create database IF NOT EXISTS users;" -uroot
-
-script:
-  - ./vendor/bin/phpunit --bootstrap=tests/bootstrap.php
-  - ./vendor/bin/phpcs -n --standard=PSR2 ./src/ ./tests/
-
-after_script:
-  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
 
 notifications:
   email: false
