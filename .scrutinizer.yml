@@ -1,6 +1,5 @@
 tools:
     external_code_coverage:
-        timeout: 600    # Timeout in seconds.
 
 phpunit --coverage-clover=coverage.clover
 wget https://scrutinizer-ci.com/ocular.phar
